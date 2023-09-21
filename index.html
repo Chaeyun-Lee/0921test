@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/7200e6d681.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        *{
+            margin:0 auto;
+            padding:0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+        }
+        ul{
+            list-style-type:none;
+        }
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        /*기본 css 세팅*/
+        header{
+            width:100vw;
+            height:50px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 3px #4d4d4d83;
+            line-height: 50px;
+            padding: 0px 30px;
+            position: sticky;
+            top:0;
+            z-index: 100;
+        }
+        #logo span{
+            font-weight: bold;
+            font-size: 18px;
+        }
+        header nav{
+            position:absolute;
+            top:0;
+            right:3%;
+        }
+        header ul{
+            display:block;
+        }
+        header>nav>i.fa-bars{
+            display: none;
+        }
+        header>nav>ul>li{
+            display: inline-block;
+        }
+        header>nav>ul>li>a{
+            margin:0px 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        header>nav>ul>li>a:hover{
+            font-weight:bold;
+        }
+        /*헤더 css 끝*/
+        /*메인 css 시작*/
+        main{
+            width:90vw;
+        }
+        h2{
+            margin-bottom:20px;
+            padding:20px 0px;
+            border-bottom:1px solid #ccc;
+        }
+        #bigPic{
+            position:relative;
+        }
+        #bigPic div{
+            color:white;
+            font-size: 26px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+        #bigPic span{
+            background-color: rgba(0,0,0,0.7);
+            padding:3px;
+            display: inline-block;
+            text-align: center;
+            width:55px;
+            font-weight: bold;
+            margin:0px 5px;
+        }
+        #bigPic img{
+            width:100%;
+            height:100vh;
+        }
+        #gallery{
+            padding-top:100px
+        }
+        #gallery ul{
+            display: flex;
+            flex-flow:row wrap;
+        }
+        #gallery li{
+            position:relative;
+            margin-top:20px;
+            width: 24%;
+            height:200px;
+            filter:saturate(0.8);
+            cursor: pointer;
+        }
+        #gallery li:hover{
+            filter:saturate(1.5);
+        }
+        #gallery li p{
+            display: inline-block;
+            position:absolute;
+            top:0;
+            left:0;
+            background-color: rgb(0, 0, 0);
+            padding:5px;
+            width:120px;
+            text-align: center;
+            color:white;
+        }
+        .frame{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        .frame img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #info{
+            padding-top:100px;
+        }
+        #info ul{
+            display: flex;
+            flex-flow:row wrap;
+        }
+        #info li{
+            position:relative;
+            margin-top:20px;
+            width: 24%;
+            height:500px;
+        }
+        .pplFrame{
+            width:100%;
+            height:250px;
+        }
+        .pplFrame img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+        .pplText{
+            padding:20px 0px;
+        }
+        .ppText h3, .pplText p{
+            margin:10px 0px;
+        }
+        .pplText>p:nth-child(2){
+            color:#ccc;
+        }
+        .pplText button{
+            width:100%;
+            margin:10px 0px;
+            padding:10px;
+            font-size: 16px;
+            border:none;
+            cursor: pointer;
+        }
+        .pplText button:hover{
+            background-color: #ebebeb;
+        }
+        /*메인 css 끝*/
+        /*푸터 css 시작*/
+        footer{
+            padding-top:100px;
+            width: 90vw;
+            background-color: rgb(255, 254, 254);
+        }
+        input{
+            width:100%;
+            height:30px;
+            padding-left:10px;
+            margin-top:15px;
+            border-radius: 2pt;
+            border:1px solid #ccc;
+        }
+        footer button{
+            display: block;
+            background-color: #000000;
+            border:none;
+            color:white;
+            padding:5px;
+            width:150px;
+            height:40px;
+            margin:30px 0px;
+            cursor: pointer;
+        }
+        footer button:hover{
+            background-color: #252525;
+        }
+        footer iframe{
+            width:90vw;
+            height:700px;
+        }
+        /*pc 버전 css 완료*/
+
+        @media screen and (max-width:600px){
+            #logo{
+                position:absolute;
+                left:50%;
+                transform: translateX(-50%);
+            }
+            header ul{
+                position:absolute;
+                top:110%;
+                right:0px;
+                width:200px;
+                border-radius: 10px;
+                background-color: #ffffff9c;
+                box-shadow: 0px 0px 5px 1px #7a7a7a70;
+                display:none;
+        }
+            .active{
+                display:block;
+        }
+            header>nav>ul>li>a{
+                margin-left:0;
+                width:100%;
+                display:block;
+                border-radius:10px;
+        }
+            header>nav>ul>li>a:hover{
+                background-color: #f5f5f5;
+        }
+            header>nav{
+                top:10%;
+        }
+            header>nav>i.fa-bars{
+                text-align: center;
+                width:45px;
+                padding:20px 0px;
+                display: block;
+                border-radius: 100px;
+                cursor: pointer;
+        }
+            header>nav>i.fa-bars:hover{
+                background-color:rgba(0,0,0,0.5);
+                color:white;
+            }
+            #bigPic img{
+                height:auto;
+        }
+            #gallery li{
+                width: 100%;
+        }
+            #info li{
+                width: 100%;
+        }
+            footer iframe{
+                height:400px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="logo"><a href="#bigPic"><p><span>BR </span> Architects</p></a></div>
+            <nav>
+                <i class="fa-solid fa-bars fa-xl"></i>
+                <ul>
+                    <li><a href="#gallery">Projects</a></li>
+                    <li><a href="#info">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="bigPic">
+                <div><p><span>BR</span>Architects</p></div>
+                <img src="img/skyscrapers-3184798_1280.jpg" alt="">
+            </section>
+            <section id="gallery">
+                <h2>Projects</h2>
+                <ul>
+                    <li>
+                        <p>Summer</p>
+                        <div class="frame">
+                            <img src="img/architecture-1477099_640.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <p>Brick House</p>
+                        <div class="frame">
+                            <img src="img/house-1450586_640.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <p>Renovated</p>
+                        <div class="frame">
+                            <img src="img/house-1477041_640.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <p>Barn House</p>
+                        <div class="frame">
+                            <img src="img/house-1836070_640.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <p>Summer</p>
+                        <div class="frame"> 
+                            <img src="img/house-2493328_640.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <p>Brick House</p>
+                        <div class="frame">
+                            <img src="img/house-2977085_640.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <p>Renovated</p>
+                        <div class="frame">
+                            <img src="img/large-home-389271_640.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <p>Barn House</p>
+                        <div class="frame">
+                            <img src="img/new-england-1336173_640.jpg" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section id="info">
+                <h2>About</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nemo aspernatur dolorum debitis! Laborum, excepturi tempore.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nemo aspernatur dolorum debitis! Laborum, excepturi tempore. Praesentium molestiae corporis veritatis qui, quos officia explicabo minus possimus ut iusto placeat animi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nemo aspernatur dolorum debitis!Praesentium molestiae corporis veritatis qui, quos officia explicabo minus possimus ut iusto placeat animi.</p>
+                <ul>
+                    <li>
+                        <div class="pplFrame">
+                            <img src="img/beard-1845166_640.jpg" alt="">
+                        </div>
+                        <div class="pplText">
+                            <h3>Mike Ross</h3>
+                            <p>CEO & Founder</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis dicta, molestias numquam quam ipsam unde, possimus sed eius commodi eaque facere vitae odio quisquam aliquam ea repellat omnis explicabo saepe!</p>
+                            <button>Contact</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pplFrame">
+                            <img src="img/attractive-1869761_640.jpg" alt="">
+                        </div>
+                        <div class="pplText">
+                            <h3>Kelly Kim</h3>
+                            <p>Architect</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis dicta, molestias numquam quam ipsam unde, possimus sed eius commodi eaque facere vitae odio quisquam aliquam ea repellat omnis explicabo saepe!</p>
+                            <button>Contact</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pplFrame">
+                            <img src="img/man-597178_640.jpg" alt="">
+                        </div>
+                        <div class="pplText">
+                            <h3>John Doe</h3>
+                            <p>Architect</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis dicta, molestias numquam quam ipsam unde, possimus sed eius commodi eaque facere vitae odio quisquam aliquam ea repellat omnis explicabo saepe!</p>
+                            <button>Contact</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pplFrame">
+                            <img src="img/woman-6136425_640.jpg" alt="">
+                        </div>
+                        <div class="pplText">
+                            <h3>Jane Doe</h3>
+                            <p>Architect</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis dicta, molestias numquam quam ipsam unde, possimus sed eius commodi eaque facere vitae odio quisquam aliquam ea repellat omnis explicabo saepe!</p>
+                            <button>Contact</button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer id="contact">
+                <h2>Contact</h2>
+                <p>Lets get in touch and talk about your next project.</p>
+                <form>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Subject">
+                    <input type="text" placeholder="Comment">
+                </form>
+                    <button>SEND MESSAGE</button>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2233.453721581487!2d126.77259338141619!3d37.65906434953959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c854b81da6641%3A0x81c793dad0cb33d8!2z66Gv642w67Cx7ZmU7KCQIOydvOyCsOygkA!5e0!3m2!1sko!2skr!4v1695271949317!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </footer>
+    </div>
+</body>
+<script>
+    document.querySelector('i').addEventListener('click',function(){
+        document.querySelector('header ul').classList.toggle('active');
+    })
+</script>
+</html>
