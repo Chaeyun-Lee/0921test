@@ -53,7 +53,7 @@
             <h1>01_About Me</h1>
             <div id="innerPage01">
               <section id="page01Left">
-                <img src="https://placehold.it/400X600" alt="" />
+                <div id="imgWillHere"></div>
                 <div id="page01Info">
                   <div id="infoText">
                     <p>
@@ -271,10 +271,10 @@
     const headerMenu = document.querySelector("#mainPagebtn");
     const mainPage = document.querySelector("#page01");
     window.addEventListener("scroll", function () {
-      if (window.scrollY > 850) {
+      if (window.scrollY > 800) {
         headerMenu.style.position = "fixed";
         headerMenu.style.top = "5%";
-      } else if (window.scrollY <= 850) {
+      } else if (window.scrollY <= 800) {
         headerMenu.style.position = "absolute";
         headerMenu.style.top = "85%";
       }

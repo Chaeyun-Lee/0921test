@@ -8,6 +8,17 @@
 body {
   overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  width: 12.5px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: #151515ad;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 25px;
+  background-color: #ebebeb;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -48,10 +59,13 @@ nav ul {
   list-style-type: none;
   height: fit-content;
   position: absolute;
-  width: 60%;
-  display: flex;
   bottom: 10%;
   left: 50%;
+  width: 60%;
+  display: flex;
+  flex:row nowrap;
+  justify-content: center;
+  align-items: center;
   transform: translateX(-50%);
   z-index: 100;
 }
@@ -103,10 +117,15 @@ main {
   font-family: "Noto Sans KR", sans-serif;
 }
 #page01Left {
-  display: inline-block;
+  display: flex;
   width: 48%;
   height: 600px;
   display: flex;
+}
+#imgWillHere{
+  width:49%;
+  height:100%;
+  background-color: cadetblue;
 }
 #page01Info {
   width: 50%;
@@ -233,12 +252,12 @@ main {
 }
 #page02Inner {
   display: inline-block;
-  width: 75%;
+  width: 70%;
   height: 600px;
   position: relative;
 }
 #pjtList > ul {
-  width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -263,7 +282,7 @@ main {
 }
 .pjtDetails {
   position: absolute;
-  left: -300px;
+  right:0;
   text-align: center;
   display: none;
   color: #151515;
@@ -292,8 +311,8 @@ main {
 .webPjtText {
   font-family: "Noto Sans KR", sans-serif;
   width: 49%;
-  height: 100%;
-  padding: 50px 30px;
+  height: auto;
+  padding: 15% 30px;
   border-left: 2px solid #151515;
   font-size: large;
   text-align: left;
@@ -323,7 +342,7 @@ main {
   transition: 0.5s;
   position:absolute;
   right:4%;
-  bottom:40%;
+  bottom:25%;
 }
 .webPjtText button:hover{
   background-color: #151515;
