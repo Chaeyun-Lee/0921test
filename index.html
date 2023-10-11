@@ -12,12 +12,14 @@
       }
       #page03In {
         margin-top: 100px;
-        padding: 20px 40px;
+        padding: 40px 40px;
         height: 900px;
         border: 1px solid #151515;
         border-bottom: none;
         border-radius: 100px 100px 0px 0px;
         color: #151515;
+        position: relative;
+        display: flex;
       }
       #page03In h1 {
         text-align: right;
@@ -25,11 +27,66 @@
         font-weight: 100;
         display: inline-block;
       }
+      #page03In h1:nth-child(2) {
+        position: absolute;
+        right: -8%;
+        bottom: 30%;
+        transform: rotate(90deg);
+      }
       #page03In h1 span {
         border-radius: 100px;
         color: white;
         background-color: #151515;
         padding: 0px 40px;
+        position: absolute;
+        bottom: 50%;
+        right: 15%;
+      }
+      #page03In div {
+        display: inline-block;
+        /* border: 1px solid black; */
+      }
+      #innerSns span,
+      #innerDetail span,
+      #innerBanner span {
+        border: 1px solid #151515;
+        border-radius: 100px;
+        font-size: 40px;
+        padding: 0px 20px;
+        margin: 0px 10px;
+      }
+      #innerLeft {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-flow: column wrap;
+        /* border-right: 2px solid black; */
+        padding: 5px;
+      }
+      #innerSns {
+        width: 100%;
+        height: 40%;
+        border-left: 3px solid black;
+      }
+      #innerDetail {
+        width: 100%;
+        height: 50%;
+        margin: 20px 0px;
+        border-left: 3px solid black;
+      }
+      #innerBanner {
+        width: 49%;
+        height: 30%;
+        border-bottom: 3px solid black;
+        margin: 5px;
+      }
+      #page03IndexNum {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+        padding: 0;
+        font-size: 24em;
       }
     </style>
   </head>
@@ -48,25 +105,29 @@
         </nav>
       </header>
       <main>
-        <div id="page01">
+        <div id="page01" >
           <div id="page01In">
             <h1>01_About Me</h1>
             <div id="innerPage01">
               <section id="page01Left">
-                <div id="imgWillHere"></div>
+                <img src="https://placehold.it/400X600" alt="" />
                 <div id="page01Info">
                   <div id="infoText">
                     <p>
-                      "소개글"<br />Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Harum obcaecati dolorem dolorum
-                      explicabo, asperiores earum ab labore vero corrupti quos
-                      libero totam
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Praesentium placeat quisquam vero at, repellat fugiat ex.
                     </p>
                   </div>
                   <h2>이채윤</h2>
                   <p>2000 . 08 . 11</p>
                   <p>경기도 고양시 거주</p>
                   <p>lycheey@naver.com</p>
+                  <ul id="personalKw">
+                    <li>#책임감</li>
+                    <li>#효율성</li>
+                    <li>#신뢰성</li>
+                    <li>#도전정신</li>
+                  </ul>
                   <div id="infoSkill">
                     <p>다루는 기술</p>
                     <ul>
@@ -87,6 +148,7 @@
                     <ul>
                       <li>2종 보통 운전면허</li>
                       <li>웹디자인기능사 필기</li>
+                      <li>TOEIC 835</li>
                     </ul>
                   </div>
                 </div>
@@ -130,9 +192,9 @@
           </div>
         </div>
         <!-- Page01 끝 ////// Page02 시작 -->
-        <div id="page02">
+        <div id="page02" >
           <div id="page02In">
-            <h1>02_ <br />My <br /><span>Web</span> <br />Projects</h1>
+            <h1>My <br /><span>Web</span> <br />Projects</h1>
             <section id="page02Inner">
               <div id="pjtList">
                 <ul>
@@ -255,15 +317,33 @@
                 </ul>
               </div>
             </section>
+            <p id="page02IndexNum">02</p>
           </div>
         </div>
-        <div id="page03">
+        <!-- Page02 끝 //////////// Page03 시작 -->
+        <div id="page03" >
           <div id="page03In">
-            <h1>03_ <br />My <br /><span>Design</span> <br />Projects</h1>
+            <h1><span>Design</span></h1>
+            <h1>My Projects</h1>
+            <div id="innerLeft">
+              <div id="innerSns">
+                <span>SNS</span>
+                <div id="snsContents"></div>
+              </div>
+              <div id="innerDetail">
+                <span>Detail View</span>
+                <div id="detailContents"></div>
+              </div>
+            </div>
+            <div id="innerBanner">
+              <span>BANNER</span>
+              <div id="bannerContents"></div>
+            </div>
+            <p id="page03IndexNum">03</p>
           </div>
         </div>
       </main>
-      <footer></footer>
+      <footer class="pages"></footer>
     </div>
   </body>
   <script>
@@ -279,11 +359,12 @@
         headerMenu.style.top = "85%";
       }
     });
+
   </script>
   <script>
     //jquery
     $(function () {
-      $(".webList").each(function(){
+      $(".webList").each(function () {
         $(this).on("click", function () {
           $(this).children(".pjtDetails").slideToggle(300, "linear");
           $(this).siblings().toggle("hideList");
@@ -296,6 +377,6 @@
       //     $(this).addClass('actives');
       //     $(this).siblings().removeClass('actives');
       // }) 실행안됨 ㅠ ㅠ
-      })
+    });
   </script>
 </html>

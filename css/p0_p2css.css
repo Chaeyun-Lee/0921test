@@ -89,12 +89,15 @@ nav li:hover,
 nav li:active, .actives{
   background-color: #151515;
   color: white;
-  width: 300px;
+  width: 400px;
   transition: 0.5s;
 }
 /* header 끝 ///////// Main 시작 */
 main {
   padding: 0px 5%;
+}
+#page01, #page02, #page03{
+  min-height:100vh;
 }
 #page01 {
   padding: 10px 30px;
@@ -150,6 +153,13 @@ main {
   text-align: center;
   padding: 30px;
   margin-bottom: 20px;
+}
+#personalKw li{
+  display: inline-block;
+  border-radius:30px;
+  padding:0px 10px;
+  border: 1px solid #151515;
+  margin:5px 0px;
 }
 #infoSkill p {
   text-align: right;
@@ -238,8 +248,11 @@ main {
   border-bottom: none;
   border-radius: 100px 100px 0px 0px;
   color: #151515;
+  position:relative;
+  display: flex;
 }
 #page02In h1 {
+  width:27%;
   font-size: 6em;
   font-weight: 100;
   display: inline-block;
@@ -283,6 +296,7 @@ main {
 .pjtDetails {
   position: absolute;
   right:0;
+  width:100%;
   text-align: center;
   display: none;
   color: #151515;
@@ -290,11 +304,11 @@ main {
   z-index: 50;
 }
 .pjtDetail {
-  width: 1100px;
+  width: 100%;
   height: 700px;
   padding: 10px;
   border: 1px solid #151515;
-  border-radius: 50px 0px;
+  border-radius: 50px 0px  ;
   display: flex;
   background-color: #ffffff;
 }
@@ -348,5 +362,13 @@ main {
   background-color: #151515;
   color:#ffffff;
   transition: 0.5s;
+}
+#page02IndexNum{
+  display: inline-block;
+  position:absolute;
+  bottom:0;
+  right:0;
+  padding:50px;
+  font-size: 24em;
 }
 /* Page02 끝  /////////// Page03 시작 */
