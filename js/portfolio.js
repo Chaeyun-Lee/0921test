@@ -11,26 +11,49 @@ window.addEventListener("scroll", function () {
   }
 });
 
-//intersection 감시 (page 나타날 때 애니메이션)
-const pages = document.querySelectorAll(".pages");
+//intersection 감시 (page 나타날 때 애니메이션 / mobile에서는 감시해제)
+const screenW = window.matchMedia("screen and (min-width: 1023px)");
 
-const obsever = new IntersectionObserver(
-  (e) => {
-    e.forEach((pages) => {
-      if (pages.isIntersecting) {
-        pages.target.classList.add("visible");
-      } else {
-        pages.target.classList.remove("visible");
-      }
-    });
-  },
-  {
-    threshold: 0.5,
-  }
-);
-obsever.observe(pages[0]);
-obsever.observe(pages[1]);
-obsever.observe(pages[2]);
+if (screenW.matches) {
+  const pages = document.querySelectorAll(".pages");
+
+  const obsever = new IntersectionObserver(
+    (e) => {
+      e.forEach((pages) => {
+        if (pages.isIntersecting) {
+          pages.target.classList.add("visible");
+        } else {
+          pages.target.classList.remove("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+  obsever.observe(pages[0]);
+  obsever.observe(pages[1]);
+  obsever.observe(pages[2]);
+} else {
+  const pages = document.querySelectorAll(".pages");
+  const obsever = new IntersectionObserver(
+    (e) => {
+      e.forEach((pages) => {
+        if (pages.isIntersecting) {
+          pages.target.classList.add("visible");
+        } else {
+          pages.target.classList.remove("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+  obsever.unobserve(pages[0]);
+  obsever.unobserve(pages[1]);
+  obsever.unobserve(pages[2]);
+};
 
 const scrollDown = document.querySelector("#scrollDown");
 
@@ -84,7 +107,6 @@ let num = 0;
 
 function carousel() {
   const fullpageCoverItems = document.querySelectorAll(".fullpageItems");
-  
 
   for (let i = 0; i < fullpageCoverItems.length; i++) {
     fullpageCoverItems[i].style.opacity = "0";
@@ -96,3 +118,13 @@ function carousel() {
   }
   fullpageCoverItems[num - 1].style.opacity = "1";
 }
+
+//Mobile
+$(function () {
+  $("#eduTitle").on("click", function () {
+    $("#eduText").slideToggle(300, "linear");
+  });
+  $("#workTitle").on("click", function () {
+    $("#workText").slideToggle(300, "linear");
+  });
+});
