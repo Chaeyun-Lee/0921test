@@ -71,7 +71,6 @@ nav ul {
   align-items: center;
   transform: translateX(-50%);
   z-index: 100;
-  background-color: saddlebrown;
 }
 nav ul a {
   display: inline-block;
@@ -615,7 +614,6 @@ main {
     transition: 0.5s;
     display: block;
     height: fit-content;
-    border:1px solid red;
   }
   nav li {
     display: inline-block;
@@ -640,8 +638,7 @@ main {
     padding:0px;
   }
   #page01In {
-    margin-top: 100px;
-    padding: 20px 40px;
+    padding:20px 30px;
     min-height: 100vh;
     height: fit-content;
   }
@@ -732,5 +729,39 @@ main {
     padding: 0px;
     font-size: medium;
     border-left:0px;
+  }
+  /* --------------page02--------------- */
+  #page02In {
+    padding:20px 30px;
+    min-height: 100vh;
+    height: fit-content;
+    position:relative;
+    flex-direction: column;
+  }
+  #page02In h1 {
+    width:100%;
+    font-size: 3em;
+  }
+  #page02In h1 span {
+    padding: 0px 20px;
+  }
+  #page02Inner {
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+  }
+  #pjtList > ul > li {
+    font-size: 2em;
+  }
+  #pjtList > ul > li > span{
+    font-size: xx-large;
+  }
+  #page02IndexNum{
+    top:0;
+    right:10%;
+    padding:0px;
+    height: min-content;
+    font-size: 10em;
   }
 }
