@@ -666,7 +666,6 @@ main {
   }
   #page01Info {
     width: 49%;
-    /* border: 1px solid black; */
   }
   #personalKw li{
     margin:1px 0px;
@@ -765,6 +764,72 @@ main {
     right:10%;
     padding:0px;
     height: min-content;
-    font-size: 10em;
+    font-size: 7em;
+  }
+  .pjtDetail {
+    height:  65vh;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .webPjtPhoto {
+    width: 100%;
+    height: 40%;
+    padding:1%;
+    overflow-x: hidden;
+  }
+  .webPjtPhoto::-webkit-scrollbar {
+    width: 5px;
+  }
+  .webPjtPhoto::-webkit-scrollbar-thumb {
+    border-radius: 25px;
+    background-color: #151515ad;
+  }
+  .webPjtPhoto::-webkit-scrollbar-track {
+    border-radius: 25px;
+    background-color: #ebebeb;
+  }
+  .webPjtText {
+    width: 100%;
+    height: 60%;
+    padding: 1% 10px;
+    border-left: 0px solid #151515;
+    font-size: small;
+  }
+  .webPjtText > p:first-child{
+    font-size: 0.8rem;
+    border-left:1px solid #151515;
+  }
+  /* ----- pc, mobile 아이콘------ */
+  .webPjtText > p > span{ 
+    font-size: 20px;
+    margin:0px 5px;
+  }
+  .webPjtText p {
+    margin: 5px 0px;
+  }
+  .webInfoTitle {
+    width: 23%;
+    font-weight: bold;
+    text-align: right;
+  }
+  .webInfoText {
+    padding: 0px 10px;
+    width: 72%;
+  }
+  .webInfoText p, .webInfoTitle p{
+    margin:0px;
+  }
+  .webPjtText button{
+    width:100px;
+    font-size:medium;
+    position:absolute;
+    right:25%;
+    bottom:0%;
+  }
+  .webPjtText button:last-child{
+    position:absolute;
+    right:2%;
+    bottom:0%;
   }
 }
