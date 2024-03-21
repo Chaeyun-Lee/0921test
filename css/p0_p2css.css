@@ -675,8 +675,11 @@ main {
   #infoSkill{
     width:100%;
   }
+  #infoText {
+    font-size: 14px;
+  }
   #infoText span{
-    font-size: 20px;
+    font-size: 18px;
   }
   #infoSkill>p {
     font-size: medium;
@@ -727,7 +730,7 @@ main {
     display: none;
     width: 100%;
     padding: 0px;
-    font-size: medium;
+    font-size: small;
     border-left:0px;
   }
   /* --------------page02--------------- */
