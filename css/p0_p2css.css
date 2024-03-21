@@ -781,6 +781,12 @@ main {
     border-radius: 25px;
     background-color: #ebebeb;
   }
+  .webPjtPhoto img {
+    transform: scale(1.6);
+  }
+  .webPjtPhoto img:hover{
+    transform: scale(1.6);
+  }
   .webPjtText {
     width: 100%;
     height: 60%;
@@ -807,7 +813,7 @@ main {
   }
   .webInfoText {
     padding: 0px 10px;
-    width: 76%;
+    width: 73%;
   }
   .webInfoText p, .webInfoTitle p{
     margin:0px;
