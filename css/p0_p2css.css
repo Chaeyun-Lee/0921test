@@ -379,8 +379,18 @@ main {
 .webPjtText p {
   margin: 10px 0px;
 }
+.webInfo{
+  margin:10px 0px;
+}
+.webInfo li{
+  border-bottom:0.5px solid #ebebeb;
+  padding:2px 0px;
+}
+.webInfo li div{
+  display: inline-table;
+}
 .webInfoTitle {
-  width: 23%;
+  width: 25%;
   font-weight: bold;
   text-align: right;
 }
@@ -389,7 +399,7 @@ main {
   width: 72%;
 }
 .webBtns{
-  margin: 10% 0px;
+  margin: 5% 0px;
   padding:3px;
 }
 .webPjtText button{
@@ -806,8 +816,11 @@ main {
   .webPjtText p {
     margin: 5px 0px;
   }
+  .webInfo{
+    font-size: smaller;
+  }
   .webInfoTitle {
-    width: 23%;
+    width: 25%;
     font-weight: bold;
     text-align: right;
   }
